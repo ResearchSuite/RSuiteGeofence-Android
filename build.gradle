@@ -1,0 +1,28 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+        maven { url 'https://maven.fabric.io/public' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'me.tatarka:gradle-retrolambda:3.2.3'
+        classpath "com.neenbedankt.gradle.plugins:android-apt:1.4"
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" } // for MPAndroidChard, not on jcenter yet
+        maven { url "https://dl.bintray.com/edu-cornell-tech-foundry/SDLRSX" }
+        maven { url "https://dl.bintray.com/researchstack/ResearchStack" }
+        maven { url "https://dl.bintray.com/edu-cornell-tech-foundry/ResearchSuiteAppFramework" }
+        mavenLocal()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="sdl_rsx_rsrpsupport-0.0.2">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/dbec7284141c3f72c79843639f3ee960ee87c78a/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/dbec7284141c3f72c79843639f3ee960ee87c78a/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/edu.cornell.tech.foundry/sdl_rsx_rsrpsupport/0.0.2/4be79dd935e2b912ac9b677b5fc09c73399f0616/sdl_rsx_rsrpsupport-0.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

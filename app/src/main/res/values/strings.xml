@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Location App</string>
+    <string name="participant_since">Participant Since</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="version_info">Version Information</string>
+
+
+
+</resources>

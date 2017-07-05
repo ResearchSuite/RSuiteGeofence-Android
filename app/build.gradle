@@ -1,0 +1,73 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "edu.cornell.tech.foundry.geofence"
+        minSdkVersion 21
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        buildConfigField "long", "TIMESTAMP", System.currentTimeMillis() + "L"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize '2g' //specify the heap size for the dex process
+    }
+
+
+}
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'org.researchstack:backbone:1.1.2'
+    compile 'org.researchstack:skin:1.1.2'
+    compile 'net.zetetic:android-database-sqlcipher:3.5.4@aar'
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.madgag.spongycastle:core:1.54.0.0'
+    compile 'com.madgag.spongycastle:prov:1.54.0.0'
+    compile 'com.madgag.spongycastle:pkix:1.54.0.0'
+    compile 'edu.cornell.tech.foundry:sdl_rsx:0.0.4'
+    compile 'edu.cornell.tech.foundry:sdl_rsx_rstbsupport:0.0.1'
+    compile 'edu.cornell.tech.foundry:sdl_rsx_rsrpsupport:0.0.2'
+    compile 'edu.cornell.tech.foundry:sdl_rsx_rsrpohmagebackend:0.0.2'
+    compile 'com.google.android.gms:play-services-location:11.0.1'
+    compile 'edu.cornell.tech.foundry:researchsuitetaskbuilder:0.0.5'
+    compile 'edu.cornell.tech.foundry:researchsuiteresultsprocessor:0.0.5'
+    compile 'edu.cornell.tech.foundry:ohmageomhbackend:0.0.5'
+    compile 'edu.cornell.tech.foundry:ohmageomhsdkrs:0.0.5'
+    testCompile 'junit:junit:4.12'
+    apt 'co.touchlab.squeaky:squeaky-processor:0.4.0.0'
+    compile project(':rsextensionsrstb')
+    compile project(':rsuiteextensionscore')
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '24.1.0'
+            }
+        }
+    }
+}
+

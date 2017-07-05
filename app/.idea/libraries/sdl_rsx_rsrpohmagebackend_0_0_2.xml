@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="sdl_rsx_rsrpohmagebackend-0.0.2">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/5eff2c45ccc93aefa145e9dec3e414c775314cb9/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/5eff2c45ccc93aefa145e9dec3e414c775314cb9/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/edu.cornell.tech.foundry/sdl_rsx_rsrpohmagebackend/0.0.2/dcab68972913adf574a7669470dd2416123f7c20/sdl_rsx_rsrpohmagebackend-0.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

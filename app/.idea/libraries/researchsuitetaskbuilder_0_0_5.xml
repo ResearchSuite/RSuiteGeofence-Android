@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="researchsuitetaskbuilder-0.0.5">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/653cc8e9c3332ee918433a491dbe9bf1a51c4c45/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/653cc8e9c3332ee918433a491dbe9bf1a51c4c45/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/edu.cornell.tech.foundry/researchsuitetaskbuilder/0.0.5/88a9392435328ea443c1fab09bc569349f18841a/researchsuitetaskbuilder-0.0.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

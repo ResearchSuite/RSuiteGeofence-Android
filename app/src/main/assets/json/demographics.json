@@ -1,0 +1,257 @@
+{
+  "type": "elementList",
+  "identifier": "demographics_list",
+  "elements": [
+    {
+      "identifier": "gender",
+      "type": "singleChoiceText",
+      "text": "What is your gender?",
+      "items": [
+        {
+          "prompt": "Female",
+          "value": "female"
+        },
+        {
+          "prompt": "Male",
+          "value": "male"
+        },
+        {
+          "prompt": "Transgender",
+          "value": "transgender"
+        },
+        {
+          "prompt": "Other",
+          "value": "other"
+        }
+      ]
+    },
+    {
+      "identifier": "age",
+      "type": "numericInteger",
+      "text": "What is your age?",
+      "range": {
+        "min": 18,
+        "max": 99,
+        "unitLabel": "years"
+      }
+    },
+    {
+      "identifier": "zip_code",
+      "type": "textfield",
+      "text": "What is your zip code?",
+      "validationRegex": "^[0-9]{5}$",
+      "invalidMessage": "Please enter a valid zip code."
+    },
+    {
+      "identifier": "education",
+      "type": "singleChoiceText",
+      "text": "What is the highest degree or level of school you have completed? (If currently enrolled, mark the highest degree received.)",
+      "items": [
+        {
+          "prompt": "0-11 grade completed (no high school degree)",
+          "value": "0-11 grade (no high school degree)"
+        },
+        {
+          "prompt": "High school diploma",
+          "value": "High school diploma"
+        },
+        {
+          "prompt": "GED",
+          "value": "GED"
+        },
+        {
+          "prompt": "Vocational certificate without high school diploma",
+          "value": "Vocational certificate without high school diploma"
+        },
+        {
+          "prompt": "Vocational certificate with high school diploma",
+          "value": "Vocational certificate with high school diploma"
+        },
+        {
+          "prompt": "Some college",
+          "value": "Some college"
+        },
+        {
+          "prompt": "Associate degree",
+          "value": "Associate degree"
+        },
+        {
+          "prompt": "Bachelor's degree",
+          "value": "Bachelor's degree"
+        },
+        {
+          "prompt": "Master's degree",
+          "value": "Master's degree"
+        },
+        {
+          "prompt": "Some graduate school",
+          "value": "Some graduate school"
+        },
+        {
+          "prompt": "Graduate degree",
+          "value": "Graduate degree"
+        },
+        {
+          "prompt": "Prefer not to disclose",
+          "value": "Prefer not to disclose"
+        }
+      ]
+    },
+    {
+      "identifier": "employment_income",
+      "type": "multipleChoiceText",
+      "text": "Which best describes your current employment status? Check all that apply.",
+      "items": [
+        {
+          "prompt": "Part-time",
+          "value": "Part-time"
+        },
+        {
+          "prompt": "Full-time",
+          "value": "Full-time"
+        },
+        {
+          "prompt": "Contracted/consultant",
+          "value": "Contracted_consultant"
+        },
+        {
+          "prompt": "Homemaker",
+          "value": "Homemaker"
+        },
+        {
+          "prompt": "Self-employed",
+          "value": "Self-employed"
+        },
+        {
+          "prompt": "Student",
+          "value": "Student"
+        },
+        {
+          "prompt": "Military",
+          "value": "Military"
+        },
+        {
+          "prompt": "Retired",
+          "value": "Retired"
+        },
+        {
+          "prompt": "Unemployed",
+          "value": "Unemployed"
+        },
+        {
+          "prompt": "Public assistance/social security",
+          "value": "Public assistance"
+        },
+        {
+          "prompt": "Other",
+          "value": "Other"
+        }
+      ]
+    },
+    {
+      "identifier": "ethnicity",
+      "type": "singleChoiceText",
+      "text": "Please specify your ethnicity.",
+      "items": [
+        {
+          "prompt": "American Indian or Alaska Native",
+          "value": "American Indian or Alaska Native"
+        },
+        {
+          "prompt": "Asian",
+          "value": "Asian"
+        },
+        {
+          "prompt": "Black or African American",
+          "value": "Black or African American"
+        },
+        {
+          "prompt": "Native Hawaiian or Pacific Islander",
+          "value": "Native Hawaiian or Pacific Islander"
+        },
+        {
+          "prompt": "White",
+          "value": "White"
+        },
+        {
+          "prompt": "Two or more",
+          "value": "Two or more"
+        },
+        {
+          "prompt": "Unknown",
+          "value": "Unknown"
+        },
+        {
+          "prompt": "Prefer not to disclose",
+          "value": "Prefer not to disclose"
+        }
+      ]
+    },
+    {
+      "identifier": "race",
+      "type": "singleChoiceText",
+      "text": "Please specify your race.",
+      "items": [
+        {
+          "prompt": "Hispanic or Latino",
+          "value": "Hispanic or Latino"
+        },
+        {
+          "prompt": "Not Hispanic or Latino",
+          "value": "Not Hispanic or Latino"
+        },
+        {
+          "prompt": "Unknown",
+          "value": "Unknown"
+        },
+        {
+          "prompt": "Prefer not to disclose",
+          "value": "Prefer not to disclose"
+        }
+      ]
+    },
+    {
+      "identifier": "religion",
+      "type": "multipleChoiceText",
+      "text": "Please specify your religious beliefs. Check all that apply.",
+      "items": [
+        {
+          "prompt": "Atheist",
+          "value": "Atheist"
+        },
+        {
+          "prompt": "Agnostic",
+          "value": "Agnostic"
+        },
+        {
+          "prompt": "Humanistic",
+          "value": "Humanistic"
+        },
+        {
+          "prompt": "Religious (no services)",
+          "value": "Religious (no services)"
+        },
+        {
+          "prompt": "Religious (holiday services)",
+          "value": "Religious (holiday services)"
+        },
+        {
+          "prompt": "Religious (weekly services)",
+          "value": "Religious (weekly services)"
+        },
+        {
+          "prompt": "Spiritual",
+          "value": "Spiritual"
+        },
+        {
+          "prompt": "Other",
+          "value": "Other"
+        },
+        {
+          "prompt": "Prefer not to disclose",
+          "value": "Prefer not to disclose"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="skin-1.1.1">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/fa71ae8b5ccbcdfe46577221a02acb150aed9d38/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/fa71ae8b5ccbcdfe46577221a02acb150aed9d38/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.researchstack/skin/1.1.1/c50c3305274aa4e94efc57f8bf7883ebe6733395/skin-1.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

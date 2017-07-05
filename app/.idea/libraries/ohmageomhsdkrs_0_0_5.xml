@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="ohmageomhsdkrs-0.0.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/b9edb9a5344f4c1fddebf2ecc9e0a420ffddc53f/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/b9edb9a5344f4c1fddebf2ecc9e0a420ffddc53f/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/edu.cornell.tech.foundry/ohmageomhsdkrs/0.0.5/96f3fbd832aafa95b939ff33d9479ba74563022b/ohmageomhsdkrs-0.0.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

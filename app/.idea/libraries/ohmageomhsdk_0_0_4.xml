@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="ohmageomhsdk-0.0.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/5072e5f45da1aafca4b366541146b78e42000426/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/5072e5f45da1aafca4b366541146b78e42000426/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/edu.cornell.tech.foundry/ohmageomhsdk/0.0.4/8b107c82c2156eab027bf3e718b808b2cd31a6/ohmageomhsdk-0.0.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

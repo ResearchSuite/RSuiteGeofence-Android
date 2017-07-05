@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="omhclient-0.0.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/096258daed1a30fa90d6d5119a4bb85fc3feb32f/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/096258daed1a30fa90d6d5119a4bb85fc3feb32f/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/edu.cornell.tech.foundry/omhclient/0.0.4/5a3d001e37ff4f2fcba244ea82f716f90b7d02a3/omhclient-0.0.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

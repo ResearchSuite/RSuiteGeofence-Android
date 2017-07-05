@@ -1,0 +1,14 @@
+{
+  "type": "recurring",
+  "identifier": "instruction",
+  "title": "Instruction",
+  "guid": "instruction-1",
+  "activity": {
+
+        "identifier"   : "location",
+        "type"         : "location",
+        "title"        : "Please enter your location",
+        "text"         : "Test test"
+  }
+
+}

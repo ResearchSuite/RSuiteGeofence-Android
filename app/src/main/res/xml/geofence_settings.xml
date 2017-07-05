@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:key="user_input_home"
+        android:title="Reset your Home Location"
+        android:summary="home location"/>
+
+
+
+    <Preference
+        android:key="user_input_work"
+        android:summary="work location"
+        android:title="Reset your Work Location" />
+
+    <Preference
+        android:key="sign_out"
+        android:title="Sign Out"/>
+
+</PreferenceScreen>
+

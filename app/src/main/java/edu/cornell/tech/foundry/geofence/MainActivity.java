@@ -1,5 +1,6 @@
 package edu.cornell.tech.foundry.geofence;
 
+import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -291,5 +292,21 @@ public class MainActivity extends RSGeofenceActivity implements OnMapReadyCallba
     @Override
     public void onResult(@NonNull Status status) {
 
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        if (resultCode == Activity.RESULT_OK) {
+
+            if (requestCode == REQUEST_SETTINGS) {
+                Boolean signedOut = (Boolean) data.getSerializableExtra(SettingsActivity.EXTRA_DID_SIGN_OUT);
+                if (signedOut) {
+                    startActivity(new Intent(this, OnboardingActivity.class));
+                    finish();
+                }
+                return;
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }

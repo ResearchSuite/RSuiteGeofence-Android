@@ -166,7 +166,6 @@ public class LocationStepLayout extends FrameLayout implements StepLayout, OnMap
             public void onClick(View view) {
 
                 onSubmitClicked();
-               // callbacks.onSaveStep(StepCallbacks.ACTION_END,this.getStep() ,stepResult);
 
             }
         });
@@ -182,6 +181,7 @@ public class LocationStepLayout extends FrameLayout implements StepLayout, OnMap
                     userInput = locationField.getText().toString();
                     if (userInput != "") {
                         setGivenLocation(userInput);
+                        Log.d("geocode called","called");
                     }
                 }
                 return false;
@@ -255,6 +255,13 @@ public class LocationStepLayout extends FrameLayout implements StepLayout, OnMap
 
         location = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
 
+        Log.d("last location: ",String.valueOf(location));
+
+        String currentLatString = String.valueOf(location.getLatitude());
+        String currentLngString = String.valueOf(location.getLongitude());
+
+        setGivenLocation(currentLatString,currentLngString);
+
         if (location != null) {
             handleNewLocation(location);
         } else {
@@ -285,9 +292,9 @@ public class LocationStepLayout extends FrameLayout implements StepLayout, OnMap
 
         double currentLatitude = location.getLatitude();
         double currentLongitude = location.getLongitude();
+
         LatLng currentLocation = new LatLng(currentLatitude,currentLongitude);
         mGoogleMap.addMarker(new MarkerOptions().position(currentLocation).title("Current Location"));
-       // mGoogleMap.moveCamera(CameraUpdateFactory.newLatLng(currentLocation));
         CameraPosition cameraPosition = new CameraPosition.Builder()
                 .target(currentLocation)      // Sets the center of the map to location user
                 .zoom(17)                   // Sets the zoom
@@ -347,6 +354,14 @@ public class LocationStepLayout extends FrameLayout implements StepLayout, OnMap
         GeocodeAsyncTask task = new GeocodeAsyncTask(this);
         String urlAddress = address.replace(" ", "%20");
         task.execute("http://maps.google.com/maps/api/geocode/json?address=" + urlAddress + "&sensor=false");
+
+    }
+
+    private void setGivenLocation(String lat, String lng){
+
+        GeocodeAsyncTask task = new GeocodeAsyncTask(this);
+        task.execute("http://maps.google.com/maps/api/geocode/json?address=" + lat+"%20"+lng + "&sensor=false");
+
 
     }
 }

@@ -12,6 +12,7 @@ public class LocationStepResult extends StepResult {
     private Double longitute;
     private Double latitude;
     private String userInput;
+    private String address;
 
     public LocationStepResult(Step step) {
         super(step);
@@ -38,6 +39,10 @@ public class LocationStepResult extends StepResult {
     public String getUserInput(){
         return this.userInput;
     }
+
+    public void setAddress(String address) { this.address = address;}
+
+    public String getAddress() { return this.address;}
 
 
 

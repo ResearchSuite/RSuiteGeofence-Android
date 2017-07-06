@@ -64,6 +64,7 @@ public class LocationStepLayout extends FrameLayout implements StepLayout, OnMap
     private LocationRequest mLocationRequest;
     private Button mSubmitButton;
     private String userInput;
+    private String formattedAddress;
 
 
 
@@ -201,6 +202,7 @@ public class LocationStepLayout extends FrameLayout implements StepLayout, OnMap
             result.setEndDate(stepResult.getEndDate());
             result.setLongLat(longitude, latitude);
             result.setUserInput(userInput);
+            result.setAddress(formattedAddress);
             stepResult.setResult(result);
         }
 
@@ -299,6 +301,7 @@ public class LocationStepLayout extends FrameLayout implements StepLayout, OnMap
 
         double lng = 0;
         double lat = 0;
+        String formattedAddress = "";
 
         JSONObject jsonObject = null;
         try {
@@ -311,6 +314,9 @@ public class LocationStepLayout extends FrameLayout implements StepLayout, OnMap
             lat = ((JSONArray) jsonObject.get("results")).getJSONObject(0)
                     .getJSONObject("geometry").getJSONObject("location")
                     .getDouble("lat");
+
+            formattedAddress = ((JSONArray) jsonObject.get("results")).getJSONObject(0).getString("formatted_address");
+            Log.d("formatted address", formattedAddress);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -323,6 +329,7 @@ public class LocationStepLayout extends FrameLayout implements StepLayout, OnMap
 
         this.longitude = lng;
         this.latitude = lat;
+        this.formattedAddress = formattedAddress;
 
         LatLng newLocation = new LatLng(newLatitude, newLongitude);
         mGoogleMap.addMarker(new MarkerOptions().position(newLocation).title("New Location"));

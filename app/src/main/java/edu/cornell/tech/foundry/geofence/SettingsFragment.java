@@ -42,7 +42,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
         Preference homePreference = (Preference) findPreference(KEY_HOME_LOCATION);
 
-        byte[] homeLocation = stateHelper.valueInState(getContext(),"user_input_home");
+        byte[] homeLocation = stateHelper.valueInState(getContext(),"address_home");
         try {
             String homeLocationString = new String(homeLocation, "UTF-8");
             homePreference.setSummary(homeLocationString);
@@ -54,7 +54,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
         Preference workPreference = (Preference) findPreference(KEY_WORK_LOCATION);
 
-        byte[] workLocation = stateHelper.valueInState(getContext(),"user_input_work");
+        byte[] workLocation = stateHelper.valueInState(getContext(),"address_work");
         try {
             String workLocationString = new String(workLocation, "UTF-8");
             workPreference.setSummary(workLocationString);
@@ -129,7 +129,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
         Preference homePreference = (Preference) findPreference(KEY_HOME_LOCATION);
 
-        byte[] homeLocation = stateHelper.valueInState(getContext(),"user_input_home");
+        byte[] homeLocation = stateHelper.valueInState(getContext(),"address_home");
         try {
             String homeLocationString = new String(homeLocation, "UTF-8");
             homePreference.setSummary(homeLocationString);
@@ -141,7 +141,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
         Preference workPreference = (Preference) findPreference(KEY_WORK_LOCATION);
 
-        byte[] workLocation = stateHelper.valueInState(getContext(),"user_input_work");
+        byte[] workLocation = stateHelper.valueInState(getContext(),"address_work");
         try {
             String workLocationString = new String(workLocation, "UTF-8");
             workPreference.setSummary(workLocationString);

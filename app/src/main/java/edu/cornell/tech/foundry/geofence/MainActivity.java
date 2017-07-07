@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -52,6 +53,7 @@ public class MainActivity extends RSGeofenceActivity implements OnMapReadyCallba
 
     private Button startButton;
     RSTBStateHelper stateHelper;
+    private TextView geofenceText;
 
 
 
@@ -69,6 +71,8 @@ public class MainActivity extends RSGeofenceActivity implements OnMapReadyCallba
                 startGeofence();
             }
         });
+
+        geofenceText = (TextView) findViewById(R.id.geofenceText);
 
 
     }
@@ -230,9 +234,6 @@ public class MainActivity extends RSGeofenceActivity implements OnMapReadyCallba
             e.printStackTrace();
         }
 
-
-
-
     }
 
     @Override
@@ -251,6 +252,7 @@ public class MainActivity extends RSGeofenceActivity implements OnMapReadyCallba
     @Override
     public void onConnected(@Nullable Bundle bundle) {
         getLastKnownLocation();
+        startGeofence();
 
     }
 

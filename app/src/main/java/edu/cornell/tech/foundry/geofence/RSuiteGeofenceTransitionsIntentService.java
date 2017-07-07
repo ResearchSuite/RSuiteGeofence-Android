@@ -38,7 +38,11 @@ public class RSuiteGeofenceTransitionsIntentService extends IntentService {
     @Override
     protected void onHandleIntent(Intent intent) {
         GeofencingEvent geofencingEvent = GeofencingEvent.fromIntent(intent);
+        Log.d("here: ","geofencing event");
         if (geofencingEvent.hasError()) {
+
+            Log.d("here: ","geofencing event error");
+
 //            String errorMessage = RSuiteGeofenceErrorMessages.getErrorString(this,
 //                    geofencingEvent.getErrorCode());
 //            Log.e(TAG, errorMessage);
@@ -115,6 +119,7 @@ public class RSuiteGeofenceTransitionsIntentService extends IntentService {
         switch (transitionType) {
             case Geofence.GEOFENCE_TRANSITION_ENTER:
             case Geofence.GEOFENCE_TRANSITION_DWELL:
+                Log.d("entered: ","geofence");
                 return LogicalLocationSample.Action.ENTER;
             case Geofence.GEOFENCE_TRANSITION_EXIT:
                 return LogicalLocationSample.Action.EXIT;

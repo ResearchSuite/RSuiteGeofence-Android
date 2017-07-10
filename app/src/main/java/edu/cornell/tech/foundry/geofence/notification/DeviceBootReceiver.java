@@ -14,6 +14,10 @@ public class DeviceBootReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent)
     {
         Log.i("DeviceBootReceiver", "onReceive()");
-        context.sendBroadcast(TaskAlertReceiver.createSetNotificationIntent());
+       // RSGeofenceActivityManager.get().queueActivity(context, "LocationOnboarding", true);
+
+
+
+        //context.sendBroadcast(TaskAlertReceiver.createSetNotificationIntent());
     }
 }

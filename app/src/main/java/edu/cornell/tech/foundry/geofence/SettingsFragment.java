@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
 import android.support.v7.preference.PreferenceScreen;
+import android.util.Log;
 
 import org.researchstack.backbone.storage.file.StorageAccessListener;
 import org.researchstack.backbone.utils.LogExt;
@@ -71,6 +72,8 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
         super.onStart();
 
+        stopMonitoringGeofences();
+        ((SettingsActivity)getActivity()).updateGeofences();
         updateUI();
     }
 
@@ -79,7 +82,11 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
         super.onNavigateToScreen(preferenceScreen);
 
-        updateUI();
+        stopMonitoringGeofences();
+
+        ((SettingsActivity)getActivity()).updateGeofences();
+
+       // updateUI();
 
 
     }
@@ -125,6 +132,8 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
     public void updateUI() {
 
+        Log.d("testing updateUI: ","here");
+
         RSTBStateHelper stateHelper = RSGeofenceTaskBuilderManager.getBuilder().getStepBuilderHelper().getStateHelper();
 
         Preference homePreference = (Preference) findPreference(KEY_HOME_LOCATION);
@@ -141,9 +150,12 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
         Preference workPreference = (Preference) findPreference(KEY_WORK_LOCATION);
 
+        Log.d("testing updateUI: ","here");
+
         byte[] workLocation = stateHelper.valueInState(getContext(),"address_work");
         try {
             String workLocationString = new String(workLocation, "UTF-8");
+            Log.d("testing updateUI(v): ",workLocationString);
             workPreference.setSummary(workLocationString);
         } catch (UnsupportedEncodingException e) {
             workPreference.setSummary("unsaved location");
@@ -169,4 +181,17 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     public void onDataAuth() {
 
     }
+
+    private void stopMonitoringGeofences() {
+        RSuiteGeofenceManager.getInstance().stopMonitoringGeofences(getActivity());
+
+    }
+
+    private void startMonitoringGeofences() {
+        RSuiteGeofenceManager.getInstance().startMonitoringGeofences(getActivity());
+
+    }
+
+
+
 }

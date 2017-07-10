@@ -56,6 +56,8 @@ dependencies {
     compile 'edu.cornell.tech.foundry:ohmageomhsdkrs:0.0.5'
     testCompile 'junit:junit:4.12'
     apt 'co.touchlab.squeaky:squeaky-processor:0.4.0.0'
+    compile 'com.google.android.gms:play-services-location:11.0.0'
+    compile 'com.google.android.gms:play-services-maps:11.0.0'
     compile project(':rsextensionsrstb')
     compile project(':rsuiteextensionscore')
 }

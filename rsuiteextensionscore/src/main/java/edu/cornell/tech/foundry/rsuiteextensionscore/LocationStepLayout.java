@@ -257,13 +257,16 @@ public class LocationStepLayout extends FrameLayout implements StepLayout, OnMap
 
         Log.d("last location: ",String.valueOf(location));
 
-        String currentLatString = String.valueOf(location.getLatitude());
-        String currentLngString = String.valueOf(location.getLongitude());
 
-        setGivenLocation(currentLatString,currentLngString);
 
         if (location != null) {
+            String currentLatString = String.valueOf(location.getLatitude());
+            String currentLngString = String.valueOf(location.getLongitude());
+
+            setGivenLocation(currentLatString,currentLngString);
+
             handleNewLocation(location);
+
         } else {
             LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
         }

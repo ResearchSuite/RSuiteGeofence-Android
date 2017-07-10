@@ -82,6 +82,9 @@
             </intent-filter>
         </receiver>
 
+        <service android:name=".RSuiteGeofenceTransitionsIntentService" />
+
+
     </application>
 
 </manifest>

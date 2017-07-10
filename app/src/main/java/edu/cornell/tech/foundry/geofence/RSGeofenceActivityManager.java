@@ -38,6 +38,8 @@ public class RSGeofenceActivityManager {
 
     private static RSGeofenceActivityManager sActivityManager;
 
+    private Boolean completedOnboarding = false;
+
     @NonNull
     public static RSGeofenceActivityManager get() {
         if (sActivityManager == null) {
@@ -200,10 +202,17 @@ public class RSGeofenceActivityManager {
                 stateHelper.setValueInState(context,"address_work",String.valueOf(addressWork).getBytes());
             }
 
+            Log.d("testing order: ","onboarding finished");
+
+            this.completedOnboarding = true;
+
+
             SharedPreferences.Editor editor = mSharedPreferences.edit();
             editor.putString("user_input_home", userInputHome);
             editor.putString("user_input_work", userInputWork);
             editor.commit();
+
+
 
 
         }
@@ -234,7 +243,7 @@ public class RSGeofenceActivityManager {
 
         }
 
-        if(Objects.equals(activityRun.identifier, "location_work")){
+        if(Objects.equals(activityRun.identifier, "location_survey_work")){
 
             StepResult stepResultWork = taskResult.getStepResult("work_location_step");
             Map stepResultsWork = stepResultWork.getResults();
@@ -270,5 +279,8 @@ public class RSGeofenceActivityManager {
 
     }
 
+    public Boolean getCompletedOnboarding(){
+        return this.completedOnboarding;
+    }
 
 }

@@ -51,6 +51,8 @@ public class SettingsActivity extends RSGeofenceActivity{
     {
         if(item.getItemId() == android.R.id.home)
         {
+
+
             onBackPressed();
             return true;
         }
@@ -66,6 +68,13 @@ public class SettingsActivity extends RSGeofenceActivity{
         if (settingsFragment != null) {
            //settingsFragment.updateUI();
         }
+    }
+
+    public void updateGeofences(){
+
+        RSGeofenceApplication app = (RSGeofenceApplication) getApplication();
+        app.initializeGeofenceManager();
+        RSuiteGeofenceManager.getInstance().startMonitoringGeofences(getApplicationContext());
     }
 
     public void signOut() {
@@ -96,4 +105,6 @@ public class SettingsActivity extends RSGeofenceActivity{
         });
 
     }
+
+
 }

@@ -97,6 +97,8 @@ public class RSGeofenceActivity extends PinCodeActivity implements RSGeofenceAct
                 LogExt.d(getClass(), "Received task result from task activity");
                 TaskResult taskResult = (TaskResult) data.getSerializableExtra(ViewTaskActivity.EXTRA_TASK_RESULT);
                 RSGeofenceActivityManager.get().completeActivity(this, taskResult, activityRun);
+
+
             } else {
 
             }

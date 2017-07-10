@@ -3,6 +3,7 @@ package edu.cornell.tech.foundry.geofence;
 import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
+import android.util.Log;
 
 import net.sqlcipher.database.SQLiteDatabase;
 
@@ -14,7 +15,10 @@ import org.researchstack.backbone.storage.database.sqlite.UpdatablePassphrasePro
 import org.researchstack.backbone.storage.file.UnencryptedProvider;
 import org.researchstack.skin.DataResponse;
 
+import java.io.UnsupportedEncodingException;
+
 import edu.cornell.tech.foundry.ohmageomhsdk.OhmageOMHManager;
+import edu.cornell.tech.foundry.researchsuitetaskbuilder.RSTBStateHelper;
 import rx.Single;
 import rx.SingleSubscriber;
 
@@ -67,10 +71,57 @@ public class RSGeofenceApplication extends Application {
         //task builder requires ResourceManager, ImpulsivityAppStateManager
         RSGeofenceTaskBuilderManager.init(context, resourcePathManager, fileAccess);
 
+
+
+
         //config results processor singleton
         //requires RSRPBackend
 //        RSGeofenceResultsProcessorManager.init(ORBEOhmageResultBackEnd.getInstance());
 //        RSRPResultsProcessor resultsProcessor = new RSRPResultsProcessor(ORBEOhmageResultBackEnd.getInstance());
+
+    }
+
+    public void initializeGeofenceManager(){
+        RSTBStateHelper stateHelper = RSGeofenceTaskBuilderManager.getBuilder().getStepBuilderHelper().getStateHelper();
+
+        double homeLat = 0;
+        double homeLng = 0;
+        double workLat = 0;
+        double workLng = 0;
+
+        byte[] homeLatByte = stateHelper.valueInState(this,"latitude_home");
+        byte[] homeLngByte = stateHelper.valueInState(this,"longitude_home");
+        byte[] workLatByte = stateHelper.valueInState(this,"latitude_work");
+        byte[] workLngByte = stateHelper.valueInState(this,"longitude_work");
+
+        if(homeLatByte != null && homeLngByte != null && workLatByte != null && workLngByte != null){
+            try {
+                String homeLatString = new String(homeLatByte, "UTF-8");
+                String homeLngString = new String(homeLngByte, "UTF-8");
+                String workLatString = new String(workLatByte, "UTF-8");
+                String workLngString = new String(workLngByte, "UTF-8");
+
+                homeLat = Double.parseDouble(homeLatString);
+                homeLng = Double.parseDouble(homeLngString);
+                workLat = Double.parseDouble(workLatString);
+                workLng = Double.parseDouble(workLngString);
+
+                RSuiteGeofenceManager.init(this,homeLat,homeLng,workLat,workLng);
+
+
+
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        }
+        else {
+            RSuiteGeofenceManager.init(this,homeLat,homeLng,workLat,workLng);
+        }
+
+
+
+
+
 
     }
 
@@ -111,13 +162,16 @@ public class RSGeofenceApplication extends Application {
                     @Override
                     public void onCompletion(Exception e) {
 
+                        Log.d("testing order: ","signed out");
                         RSGeofenceFileAccess.getInstance().clearFileAccess(RSGeofenceApplication.this);
 
 
                         if (e != null) {
+                            Log.d("testing order: ","not signed out");
                             singleSubscriber.onError(e);
                         }
                         else {
+                            Log.d("testing order: ","signed out");
                             singleSubscriber.onSuccess(new DataResponse(true, "success"));
                         }
                     }

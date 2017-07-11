@@ -15,8 +15,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationRequest;
@@ -40,9 +38,7 @@ public class MainActivity extends RSGeofenceActivity {
     private PendingIntent geoFencePendingIntent;
     private final int GEOFENCE_REQ_CODE = 0;
 
-    private Button startButton;
     RSTBStateHelper stateHelper;
-    private TextView geofenceText;
 
     public static final int REQUEST_CODE_SIGN_IN  = 31473;
     private RSuiteGeofenceManager.PendingGeofenceTask mPendingGeofenceTask = RSuiteGeofenceManager.PendingGeofenceTask.NONE;
@@ -95,14 +91,7 @@ public class MainActivity extends RSGeofenceActivity {
         // startMontioringGefoences(); //TODO: put this somewhere
 
         //createGoogleApi();
-        startButton = (Button) findViewById(R.id.startButton);
-        startButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                startGeofence();
-             //   startMonitoringGeofences();
-            }
-        });
+
 
     }
 
@@ -338,13 +327,6 @@ public class MainActivity extends RSGeofenceActivity {
     @Override
     public void onResume(){
         super.onResume();
-
-//
-//        RSGeofenceApplication app = (RSGeofenceApplication) getApplication();
-//        app.initializeGeofenceManager();
-//
-//
-//        startMonitoringGeofences();
 
     }
 }
